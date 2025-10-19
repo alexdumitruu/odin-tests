@@ -9,6 +9,16 @@ function capitalize(str) {
     return firstLetter + rest;
 }
 
+function reverseString(str) {
+    let newStr = "";
+    letterArr = str.split("");
+    for (let i = str.length - 1; i >= 0; i--) {
+        newStr += letterArr[i];
+    }
+    return newStr;
+}
 
-
-module.exports = capitalize;
+module.exports = {
+    capitalize,
+    reverseString
+};
