@@ -18,7 +18,22 @@ function reverseString(str) {
     return newStr;
 }
 
+function calculator() {
+    function add(first, second) { return first + second; }
+    function subtract(first, second) { return first - second; }
+    function multiply(first, second) { return first * second; }
+    function divide(first, second) { return first / second; }
+
+    return {
+        add,
+        subtract,
+        multiply,
+        divide
+    }
+}
+
 module.exports = {
     capitalize,
-    reverseString
+    reverseString,
+    calculator,
 };
