@@ -32,8 +32,33 @@ function calculator() {
     }
 }
 
+function caesarCipher(str, shiftFactor) {
+    shiftFactor = shiftFactor % 26;
+    let newStr = "";
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        if (char >= 65 && char <= 90) {
+            const base = 65;
+            const newChar = (char - base + shiftFactor) % 26 + base;
+            newStr += String.fromCharCode(newChar);
+        }
+        else if (char >= 97 && char <= 122) {
+            const base = 97;
+            const newChar = (char - base + shiftFactor) % 26 + base;
+            newStr += String.fromCharCode(newChar);
+        } else newStr += str[i];
+    }
+    return newStr;
+}
+
+function analyzeArray() {
+
+}
+
 module.exports = {
     capitalize,
     reverseString,
     calculator,
+    caesarCipher,
+    analyzeArray
 };

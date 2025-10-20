@@ -4,7 +4,7 @@
 //   expect(sum(1, 2)).toBe(3);
 // });
 
-const { capitalize, reverseString, calculator } = require('./practice');
+const { capitalize, reverseString, calculator, caesarCipher, analyzeArray } = require('./practice');
 
 test('first letter to be capitalized', () => {
     expect(capitalize('tactu'))
@@ -22,3 +22,9 @@ test('calculator works fine', () => {
     expect(calculator().multiply(10, 45)).toBe(450);
     expect(calculator().divide(45, 5)).toBe(9);
 });
+
+test('Caesar Cipher works correctly', () => {
+    expect(caesarCipher('xyz', 3)).toMatch('abc');
+    expect(caesarCipher('HeLLo', 3)).toMatch('KhOOr');
+    expect(caesarCipher('Hello, World!', 3)).toMatch('Khoor, Zruog!');
+})
