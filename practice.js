@@ -29,7 +29,7 @@ function calculator() {
         subtract,
         multiply,
         divide
-    }
+    };
 }
 
 function caesarCipher(str, shiftFactor) {
@@ -51,8 +51,25 @@ function caesarCipher(str, shiftFactor) {
     return newStr;
 }
 
-function analyzeArray() {
-
+function analyzeArray(arr) {
+    let avg = 0;
+    let mi = arr[0];
+    let ma = arr[0];
+    let len = arr.length;
+    let sum = 0;
+    for (let i = 0; i < len; i++) {
+        if (arr[i] < mi) mi = arr[i];
+        if (arr[i] > ma) ma = arr[i];
+        sum += arr[i];
+    }
+    avg = sum / len;
+    const obj = {
+        average: avg,
+        min: mi,
+        max: ma,
+        length: len
+    };
+    return obj;
 }
 
 module.exports = {
